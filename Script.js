@@ -59,7 +59,7 @@ window.addEventListener('scroll', function() {
 // ==================== GRADUATION COUNTDOWN TIMER ====================
 function updateCountdown() {
     // Set graduation date (adjust this to your actual graduation date)
-    const graduationDate = new Date('April 23, 2026 10:00:00').getTime();
+    const graduationDate = new Date('April 01, 2026 10:00:00').getTime();
     const now = new Date().getTime();
     const distance = graduationDate - now;
 
@@ -87,66 +87,8 @@ updateCountdown(); // Initial call
 
 // ==================== CV DOWNLOAD FUNCTIONALITY ====================
 document.getElementById('downloadCV').addEventListener('click', function(e) {
-   
-    
-    // Create a temporary message
-    const originalText = this.innerHTML;
-    this.innerHTML = '<i class="fas fa-check"></i> CV Downloaded!';
-    this.style.background = '#10b981';
-    
-    // Reset after 2 seconds
-    setTimeout(() => {
-        this.innerHTML = originalText;
-        this.style.background = '';
-    }, 2000);
-
-    // Here you would typically trigger the actual download
-    // For demo purposes, we're just showing a success message
-    // In a real implementation, you would link to your actual CV file
-    console.log('CV download initiated');
-});
-
-// ==================== CONTACT FORM VALIDATION AND SUBMISSION ====================
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-
-    // Hide previous messages
-    successMessage.style.display = 'none';
-    errorMessage.style.display = 'none';
-
-    // Basic validation
-    if (!name || !email || !message) {
-        errorMessage.style.display = 'block';
-        return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        errorMessage.textContent = 'Please enter a valid email address.';
-        errorMessage.style.display = 'block';
-        return;
-    }
-
-    // Show success message
-    successMessage.style.display = 'block';
-    
-    // Reset form
-    this.reset();
-    
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-        successMessage.style.display = 'none';
-    }, 5000);
-
-    // In a real implementation, you would send the form data to a server
-    console.log('Form submitted:', { name, email, message });
+    // e.preventDefault();
+    console.log('Opening CV in new tab....');
 });
 
 // ==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================
