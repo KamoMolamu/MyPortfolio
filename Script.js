@@ -58,7 +58,7 @@ window.addEventListener('scroll', function() {
 
 // ==================== GRADUATION COUNTDOWN TIMER ====================
 function updateCountdown() {
-    // Set graduation date (adjust this to your actual graduation date)
+    // Set graduation date  
     const graduationDate = new Date('April 01, 2026 10:00:00').getTime();
     const now = new Date().getTime();
     const distance = graduationDate - now;
